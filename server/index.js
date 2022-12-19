@@ -3,6 +3,7 @@ const mongoose=require("mongoose")
 require("dotenv").config(); // for environment variables
 
 const app = express()
+app.use(express.json());
 const port = 4000
 // mongoDB connection
 mongoose.set("strictQuery", false);
@@ -22,4 +23,7 @@ async function connect() {
 }
 connect();
 app.use("/home",require("./routes/home"))
+app.use("/home",require("./routes/addTodo"))
+app.use("/home", require("./routes/modifyTask"));
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
