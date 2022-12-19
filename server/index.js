@@ -6,7 +6,8 @@ const app = express()
 const port = 4000
 // mongoDB connection
 mongoose.set("strictQuery", false);
-const uri = process.env.mongoDB;
+const uri =
+  "mongodb+srv://parvesh:parvesh@cluster0.26rledr.mongodb.net/Todo";
 async function connect() {
   try {
     await mongoose.connect(uri, {
