@@ -4,6 +4,9 @@ const todoSchema = new mongoose.Schema({
   title: String,
   task: Array,
   date: String,
-  isImportant:Boolean
+  isImportant:{
+    type:Boolean,
+    default:false
+  }
 });
 exports.todo = mongoose.model("Todo", todoSchema);
