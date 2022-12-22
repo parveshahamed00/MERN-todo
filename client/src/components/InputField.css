@@ -52,3 +52,29 @@
 
 
 }
+@media only screen and (max-width: 500px){
+.greetings{
+  margin-top: 5%;
+}
+.greetings p{
+  font-size: 10px;
+  margin-bottom: 5%;
+}
+.text-box input{
+   height: 40px;
+  width: 60%;
+  font-size: 18px;
+}
+.text-box{
+  width: 70%;
+  justify-content: space-evenly;
+}
+::placeholder{
+  font-size:15px;
+}
+.text-box button{
+  font-size: 20px;
+      padding: 3% 5%;
+
+}
+}
