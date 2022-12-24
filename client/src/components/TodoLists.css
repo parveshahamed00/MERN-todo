@@ -1,0 +1,48 @@
+.todoLists .title {
+  font-size: 33px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+.todoLists .task{
+    color: aliceblue;
+    font-size: 20px;
+    margin: 4% 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: .7px;
+}
+
+.todoLists{
+    padding: 0 4%;
+    margin: 2% 0;
+    color: #f0f8ffe2;
+}
+
+.dropdownIcon:hover{
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
+.todoLists .iscomplete{
+    cursor: pointer;
+color: rgb(46, 93, 46);
+font-size: 15px;
+margin-right: 10px;
+
+}
+.todoLists .notcomplete{
+        cursor: pointer;
+
+    color:crimson ;
+font-size: 15px;
+margin-right: 10px;
+
+}
+
+@media only screen and (max-width: 540px)  {
+.todoLists .title{
+    font-size: 24px;
+}
+
+.todoLists .task{
+    margin: 8% 0;
+}
+}

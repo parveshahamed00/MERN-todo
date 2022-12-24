@@ -2,35 +2,41 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import InputField from "./components/InputField";
-import Tasks from "./components/Tasks";
+import CreateTodo from "./components/CreateTodo";
+import TodoLists from "./components/TodoLists";
+import AddTodo from "./components/AddTodo";
 function App() {
-  const [tasks, setTasks] = useState([]);
-  const [number,setNumber]=useState(0)
-useEffect(()=>{
-axios.get("http://localhost:4000/home/").then((e)=>{
-setTasks(e.data)
-console.log(e.data);
-}).catch((e)=>{
-  console.log(e);
-})
-},[])
-function click(){
-  setNumber(number+1)
-}
+  const [todoList, setTodoList] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:4000/home/")
+      .then((e) => {
+        // console.log(e.data);
+        setTodoList(e.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
+
   return (
     <div className="App">
       <div className="components">
         <Navbar></Navbar>
-        <InputField></InputField>
-        <div className="tasks">
-          <Tasks tasks={tasks}></Tasks>
-{/* <h1>{number}</h1>
-<button onClick={click} >ok</button> */}
+        <h4 className="greetings">
+          Welcome, Mr. Parvesh Ahamed<span className="wave">👋</span>
+        </h4>
+        <div className="todoList">
+          <div className="lists">
+            <TodoLists list={todoList}></TodoLists>
+          </div>
         </div>
+        <div className="addTodoButton">
+          <AddTodo></AddTodo>
+        </div>
+        <div className="todoButton">{/* <CreateTodo></CreateTodo> */}</div>
       </div>
     </div>
-
   );
 }
 
