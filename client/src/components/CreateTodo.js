@@ -1,45 +1,60 @@
-import React,{useState} from 'react'
-import "./CreateTodo.css"
-function CreateTodo() {
-    const [title,setTitle]=useState("")
-    const [task, setTask] = useState("");
-    const [taskList,setTaskList]=useState([])
-    function tileInput(e){
-setTitle(e.target.value)
-    }
-    function taskInput(e) {
-setTask(e.target.value);
-    }
-    function addTask(){
-        const taskObj={
-            task:task,
-            iscomplete:false
-        }
-        setTaskList([...taskList, taskObj]);
-        setTask("")  
-        console.log(taskList);
-    }
-    const tasklists=taskList.map((e,index)=>{
-        return(
-            <div key={index}>
-                <h1 className={e.iscomplete?"complete":"notComplete"}>{e.task}</h1>
-            </div>
-        )
-    })
+import React, { useState } from "react";
+  import { BsFillCheckCircleFill, BsXSquare } from "react-icons/bs";
+
+import "./CreateTodo.css";
+function CreateTodo(props) {
+  const [title, setTitle] = useState("");
+  const [task, setTask] = useState("");
+  const [taskList, setTaskList] = useState([]);
+  function tileInput(e) {
+    setTitle(e.target.value);
+  }
+  function taskInput(e) {
+    setTask(e.target.value);
+  }
+  function addTask() {
+    const taskObj = {
+      task: task,
+      iscomplete: false,
+    };
+    setTaskList([...taskList, taskObj]);
+    setTask("");
+    console.log(taskList);
+  }
+  const tasklists = taskList.map((e, index) => {
+    return (
+      <div key={index}>
+        <h1 className="addedtask"> <span><BsFillCheckCircleFill></BsFillCheckCircleFill></span> {e.task}</h1>
+      </div>
+    );
+  });
   return (
-    <div>
-      <input type="text" placeholder="Title" onChange={tileInput}></input>
-      <div className='addedtasks'>
-{tasklists}
-      </div>
-      <div><input type="text" placeholder='task' onChange={taskInput} value={task}></input>
-      <button onClick={addTask}>Add</button>
-      </div>
+    <div className="popup">
+      <div className="close-icon" onClick={props.closePopup}><BsXSquare></BsXSquare></div>
       <div>
-        <button>Add-Todo</button>
+        <input
+          type="text"
+          placeholder="Title ..."
+          onChange={tileInput}
+          className="title-input"
+        ></input>
+        <div className="addedtasks">{tasklists}</div>
+        <div className="added-task-section">
+          <input
+            type="text"
+            placeholder="task "
+            onChange={taskInput}
+            value={task}
+            className="task-input"
+          ></input>
+          <button onClick={addTask} className="add-task-button">Add</button>
+        </div>
+        <div>
+          <button className="add-todo-btn">Add-Todo</button>
+        </div>
       </div>
     </div>
   );
 }
 
-export default CreateTodo
+export default CreateTodo;

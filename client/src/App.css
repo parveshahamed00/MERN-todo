@@ -32,6 +32,23 @@ margin: auto;
    60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
   100% { transform: rotate( 0.0deg) }
 }
+
+.open-popup-div{
+    margin: auto;
+    width: 60%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: end;
+}
+.open-popup-div .add-todo{
+    font-size: 2em;
+    padding: 1% 2%;
+    border-radius: 50%;
+    border: 0;
+    color: whitesmoke;
+    background-color: #FB2576;
+
+}
 @media only screen and (max-width: 540px)  {
 .greetings{
     font-size: 10px;
@@ -43,5 +60,8 @@ margin: auto;
 .todoList{
     width: 70%;
     margin-top: 10px;
+}
+.open-popup-div .add-todo{
+    padding: 3% 6%;
 }
 }

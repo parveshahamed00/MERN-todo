@@ -1,0 +1,128 @@
+.popup {
+  width: 30%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  background-color: #0002A1;
+  padding: 3%;
+  margin-top: 20px;
+  border-radius: 5px;
+  position: relative;
+}
+.title-input {
+  height: 50px;
+  width: 200px;
+  padding-left: 10px;
+  border: 0;
+  font-size: 20px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 900;
+    color: blue;
+      letter-spacing: 2px;
+      margin-bottom: 5%;
+
+}
+.title-input::placeholder {
+  color: rgb(0, 0, 255);
+  font-size: 20px;
+  font-weight: 600;
+  font-family: monospace;
+  letter-spacing: 2px;
+}
+.task-input{
+    width: 200px;
+    height: 30px;
+    margin-right: 15px;
+      padding-left: 10px;
+  font-size: 20px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+border: 0;
+color: rgba(0, 0, 255, 0.791);
+
+}
+.task-input::placeholder{
+  color: rgba(0, 0, 255, 0.571);
+  font-size: 20px;
+  font-weight: 600;
+  font-family: monospace;
+  letter-spacing: 2px;
+}
+.add-task-button{
+    font-size: 12px;
+    padding: 1% 3%;
+    font-weight: 700;
+    color: rgba(253, 253, 253, 0.622);
+    background-color: #050772;
+    border: 1px solid #4e50b1;
+    cursor: pointer;
+    font-style: italic;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 1px;
+}
+.add-task-button:hover{
+    background-color: #0002A1;
+    border-color: aliceblue;
+    color: ghostwhite;
+}
+.added-task-section{
+    display: flex;
+}
+h1.addedtask{
+    color: rgba(240, 255, 255, 0.805);
+    font-size: 20px;
+    padding: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
+
+}
+.addedtask span{
+    font-size: 15px;
+    color: azure;
+}
+.add-todo-btn{
+    margin-top: 7%;
+    float: right;
+    padding:  3%;
+    font-size: 15px;
+  cursor: pointer;
+    font-style: italic;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 1px;
+    font-weight: bold;
+    background-color:#FB2576 ;
+    color: aliceblue;
+    border: 1px solid #4e50b1;
+}
+.add-todo-btn:hover{
+border:1px solid aliceblue;
+}
+.close-icon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    font-size: 30px;
+    
+
+}
+.close-icon:hover{
+    color: rgba(230, 85, 85, 0.826);
+}
+@media only screen and (max-width: 720px)  {
+.popup{
+    width: 70%;
+}
+.title-input{
+    height: 40px;
+}
+}
+@media only screen and (max-width: 520px){
+    .popup{
+    width: 90%;
+}
+.close-icon{
+    font-size: 25px;
+}
+}
