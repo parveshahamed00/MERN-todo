@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-  import { BsFillCheckCircleFill, BsXSquare } from "react-icons/bs";
+import { BsFillCheckCircleFill, BsXSquare } from "react-icons/bs";
+import axios from "axios";
 
 import "./CreateTodo.css";
 function CreateTodo(props) {
@@ -13,24 +14,46 @@ function CreateTodo(props) {
     setTask(e.target.value);
   }
   function addTask() {
+    if(task!==""){
     const taskObj = {
-      task: task,
+      task: task.trim(),
       iscomplete: false,
     };
     setTaskList([...taskList, taskObj]);
     setTask("");
     console.log(taskList);
+    }
+
   }
   const tasklists = taskList.map((e, index) => {
     return (
       <div key={index}>
-        <h1 className="addedtask"> <span><BsFillCheckCircleFill></BsFillCheckCircleFill></span> {e.task}</h1>
+        <h1 className="addedtask">
+          
+          <span>
+            <BsFillCheckCircleFill></BsFillCheckCircleFill>
+          </span>{" "}
+          {e.task}
+        </h1>
       </div>
     );
   });
+  function addTodo(){
+    // console.log("clicked");
+    axios.post("http://localhost:4000/home/",{
+      title:title,
+      tasks:taskList
+    }).then((e)=>{
+      console.log(e.data);
+    }).catch((e)=>{
+      console.log(e);
+    })
+  }
   return (
     <div className="popup">
-      <div className="close-icon" onClick={props.closePopup}><BsXSquare></BsXSquare></div>
+      <div className="close-icon" onClick={props.closePopup}>
+        <BsXSquare></BsXSquare>
+      </div>
       <div>
         <input
           type="text"
@@ -47,10 +70,12 @@ function CreateTodo(props) {
             value={task}
             className="task-input"
           ></input>
-          <button onClick={addTask} className="add-task-button">Add</button>
+          <button onClick={addTask} className="add-task-button">
+            Add
+          </button>
         </div>
         <div>
-          <button className="add-todo-btn">Add-Todo</button>
+          <button className="add-todo-btn" onClick={addTodo}>Add-Todo</button>
         </div>
       </div>
     </div>
