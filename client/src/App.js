@@ -21,17 +21,21 @@ function App() {
   function closePopup() {
     setPopup(false);
   }
+  function newTodo(newtodo){
+      // console.log("new todo");
+      // console.log(newtodo);
+setTodoList([...todoList,newtodo])
+  }
   function openPopup(){
         setPopup(true);
-
-  }
+}
   return (
     <div className="App">
       <Navbar></Navbar>
 
       {popup ? (
         <div className="pop-up">
-          <CreateTodo closePopup={closePopup}></CreateTodo>
+          <CreateTodo closePopup={closePopup} newTodo={newTodo}></CreateTodo>
         </div>
       ) : (
         <div className="components">
