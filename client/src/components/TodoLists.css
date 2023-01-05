@@ -1,4 +1,5 @@
 .todoLists .title {
+    position: relative;
   font-size: 33px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
@@ -36,7 +37,18 @@ font-size: 15px;
 margin-right: 10px;
 
 }
-
+.dustbin{
+ position: absolute;
+ font-size: 20px;
+ color: rgba(255, 255, 255, 0.55);
+ right: 5%;
+ top: 30%;
+ /* bottom: 50%; */
+}
+.dustbin:hover{
+    color:white;
+    cursor:pointer;
+}
 @media only screen and (max-width: 540px)  {
 .todoLists .title{
     font-size: 24px;

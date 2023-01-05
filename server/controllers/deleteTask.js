@@ -7,6 +7,7 @@ exports.deleteTask = (req, res) => {
         console.log(err);
       } else {
         console.log("Task deleted successfully");
+        res.json(docs)
       }
     });
 };

@@ -29,6 +29,11 @@ setTodoList([...todoList,newtodo])
   function openPopup(){
         setPopup(true);
 }
+function removeTodo(title){
+ 
+  let list=todoList.filter((e)=> e.title!==title) 
+  setTodoList(list)
+}
   return (
     <div className="App">
       <Navbar></Navbar>
@@ -40,11 +45,11 @@ setTodoList([...todoList,newtodo])
       ) : (
         <div className="components">
           <h4 className="greetings">
-            Welcome, Mr. Parvesh Ahamed<span className="wave">👋</span>
+            Welcome, Parvesh Ahamed<span className="wave">👋</span>
           </h4>
           <div className="todoList">
             <div className="lists">
-              <TodoLists list={todoList}></TodoLists>
+              <TodoLists list={todoList} removeTodo={removeTodo}></TodoLists>
             </div>
           </div>
           <div className="open-popup-div">
