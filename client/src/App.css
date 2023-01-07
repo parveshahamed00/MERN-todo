@@ -14,6 +14,7 @@
   display: inline-block;
 }
 .todoList{
+    position: relative;
        padding: 2%;
     margin-top: 2%;
     border-radius: 10px;
@@ -54,6 +55,16 @@ margin: auto;
     background-color: whitesmoke;
     cursor: pointer;
 }
+.sort-icon{
+    color: rgba(255, 255, 255, 0.492);
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    }
+    .sort-icon:hover{
+        cursor: pointer;
+        color: white;
+    }
 @media only screen and (max-width: 540px)  {
 .greetings{
     font-size: 10px;
@@ -69,4 +80,7 @@ margin: auto;
 .open-popup-div .add-todo{
     padding: 3% 6%;
 }
+  .sort-icon{
+    font-size: 12px;
+  }
 }
