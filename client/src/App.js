@@ -13,7 +13,7 @@ function App() {
     axios
       .get("http://localhost:4000/home/")
       .then((e) => {
-        console.log(e.data);
+        // console.log(e.data);
         setTodoList(e.data);
       })
       .catch((e) => {
