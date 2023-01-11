@@ -24,6 +24,7 @@ function TodoLists(props) {
         axios.put(`http://localhost:4000/home/${e._id}/${ee._id}`, {
           status: !ee.iscomplete,
         })
+        props.toggletaskcomplete()
       }
       return (
         <p key={index} className="task">

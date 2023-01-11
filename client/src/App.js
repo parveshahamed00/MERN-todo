@@ -9,17 +9,22 @@ import { BsArrowDownUp } from "react-icons/bs";
 function App() {
   const [todoList, setTodoList] = useState([]);
   const [popup, setPopup] = useState(false);
+  let [toggleTaskcomplete,setToggleTaskcomplete]=useState(0)
   useEffect(() => {
     axios
       .get("http://localhost:4000/home/")
       .then((e) => {
-        // console.log(e.data);
+        console.log(e.data);
         setTodoList(e.data);
       })
       .catch((e) => {
         console.log(e);
       });
-  }, []);
+  }, [toggleTaskcomplete]);
+  function toggleTaskComplete(){
+setToggleTaskcomplete(toggleTaskcomplete+1);
+setTodoList([...todoList])
+  }
   function closePopup() {
     setPopup(false);
   }
@@ -54,7 +59,11 @@ function App() {
               <BsArrowDownUp onClick={sorttodo}></BsArrowDownUp>
             </div>
             <div className="lists">
-              <TodoLists list={todoList} removeTodo={removeTodo}></TodoLists>
+              <TodoLists
+                list={todoList}
+                removeTodo={removeTodo}
+                toggletaskcomplete={toggleTaskComplete}
+              ></TodoLists>
             </div>
           </div>
           <div className="open-popup-div">
